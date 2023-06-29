@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 20px; margin-bottom: 20px">
+      <p style="text-align: center; font-size: 20px;font-weight: 500; color: blue; margin-bottom: 20px">Create
+        Chapter Image</p>
+      <mat-dialog-content>
+        <mat-card style="margin: 0">
+          <form class="form-angular" #f="ngForm" (ngSubmit)="f.form.valid && createChapterImage()" novalidate>
+            <mat-error class="matErrorFont">
+              {{status}}
+            </mat-error>
+            <!--                    NAME-->
+            <mat-form-field appearance="outline" style="width: 350px">
+              <mat-label>Chapter</mat-label>
+              <mat-select [(ngModel)]="form.story" name="chapter" [formControl]="validateChapter">
+                <mat-option *ngFor="let chapter of chapterList" [value]="chapter">
+                  {{chapter.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="validateChapter.hasError('required')">Please select on Chapter Image</mat-error>
+            </mat-form-field>
+            <!--                    END NAME-->
+
+            <app-upload-avatar (giveURLtoCreate)="onUpload($event)"></app-upload-avatar>
+            <div class="col-12" style="margin-top: 0">
+              <button class="btn btn-primary w-100" type="submit">
+                Create Chapter Image
+              </button>
+              <button mat-raised-button color="warn" [mat-dialog-close]="true" cdkFocusInitial>
+                Render list after close
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </mat-dialog-content>
+    </div>
+  </div>
+</div>

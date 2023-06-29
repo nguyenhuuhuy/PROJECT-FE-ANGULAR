@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="border-secondary text-white bg-secondary col-12 rounded-3 " style="margin-top: 2%;">
+    <div style="height: 30px;margin-top: 10%">
+      <marquee class="marquee_cls"><b>đứt cáp quang biển mạng load hơi chậm mong các bạn thông cảm</b></marquee>
+    </div>
+  </div>
+  <br>
+
+  <div class="short" style="margin-top: 2%">
+    <h1>
+      <p class="text_list_update">
+        <a href="" class="dropdown-item text-light bg-dark">
+          <i class="fa-solid fa-shuffle" style="margin-left: 1%"></i>
+          Hôm nay xem gì
+        </a>
+      </p>
+    </h1>
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-lg-3 col-md-4 col-sm-12" *ngFor="let rd of storyRandom">
+        <div class="card product_item">
+          <div class="body">
+            <div class="cp_img" >
+              <a routerLink="/detailStory/{{rd.id}}">
+              <img src="{{rd.image}}" alt="Product" class="img-fluid">
+              </a>
+            </div>
+            <div class="product_details">
+              <h5><a routerLink="/detailStory/{{rd.id}}">{{rd.name}}</a></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="short" style="margin-top: 2%">
+    <h1>
+      <p class="text_list_update">
+        <a href="" class="dropdown-item text-light bg-dark">
+          <i class="fa-solid fa-star" style="margin-left: 1%"></i>
+          TOP 10 truyện được xem nhiều nhất
+        </a>
+      </p>
+    </h1>
+  </div>
+
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 "  style="margin-bottom: 5%">
+    <div class="col" *ngFor="let top of storyTopList">
+      <div class="card" style="border-bottom-left-radius: 0;border-bottom-right-radius: 0">
+        <img
+          src="{{top.image}}"
+          class="card-img-top" alt="...">
+        <div class="card-body" style="background-color: #18191a;color: white;text-align: center;">
+          <h5 class="card-title">
+            <a routerLink="/detailStory/{{top.id}}">{{top.name}}</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="short" style="margin-top: 2%">
+    <h1>
+      <p class="text_list_update">
+        <a href="" class="dropdown-item text-light bg-dark">
+          <i class="fa-solid fa-cloud" style="margin-left: 1%"></i>
+          Truyện mới cập nhập
+        </a>
+      </p>
+    </h1>
+  </div>
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 "  style="margin-bottom: 5%">
+    <div class="col" *ngFor="let st of storyList">
+      <div class="card" style="border-bottom-left-radius: 0;border-bottom-right-radius: 0">
+        <img
+          src="{{st.image}}"
+          class="card-img-top" alt="...">
+        <div class="card-body" style="background-color: #18191a;color: white;text-align: center;">
+          <h5 class="card-title">
+            <a routerLink="/detailStory/{{st.id}}">{{st.name}}</a>
+            <a href="">ok</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-paginator [length]="100"
+                 (page)="nextPage($event)"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 aria-label="Select page" >
+  </mat-paginator>
+
+</div>
+
+

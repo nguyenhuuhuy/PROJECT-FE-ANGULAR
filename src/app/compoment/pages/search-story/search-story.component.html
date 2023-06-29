@@ -1,0 +1,15 @@
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 "  style="margin-bottom: 5%;margin-top: 10%">
+  <div class="col" *ngFor="let top of storyList">
+    <div class="card" style="border-bottom-left-radius: 0;border-bottom-right-radius: 0">
+      <img
+        src="{{top.image}}"
+        class="card-img-top" alt="...">
+      <div class="card-body" style="background-color: #18191a;color: white;text-align: center;">
+        <h5 class="card-title">
+          <a routerLink="/detailStory/{{top.id}}">{{top.name}}</a>
+        </h5>
+        <a class="card-text" routerLink="/homeChapterImage/{{top.chapterList[top.chapterList.length-1].id}}" style="color: snow;">Chương {{top.chapterList.length}}</a>
+      </div>
+    </div>
+  </div>
+</div>

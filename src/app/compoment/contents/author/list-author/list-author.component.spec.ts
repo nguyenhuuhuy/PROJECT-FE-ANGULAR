@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ListAuthorComponent } from './list-author.component';
+
+describe('ListAuthorComponent', () => {
+  let component: ListAuthorComponent;
+  let fixture: ComponentFixture<ListAuthorComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ListAuthorComponent]
+    });
+    fixture = TestBed.createComponent(ListAuthorComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

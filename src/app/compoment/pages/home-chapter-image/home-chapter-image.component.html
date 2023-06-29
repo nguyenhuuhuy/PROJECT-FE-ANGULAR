@@ -1,0 +1,24 @@
+<!--render_chapter-->
+<div class="card mb-3" style="width: 65%;margin-left: 18%;margin-top: 10%;background: #212529" >
+  <div class="col-12" style="text-align: center;margin-top: 2%">
+    <button type="button" class="btn btn-primary" style="margin-right: 10%;width: 130px" (click)="backChapter()">
+      BACK
+    </button>
+    <button type="button" class="btn btn-primary" style="width: 130px" (click)="nextChapter()">NEXT</button>
+  </div>
+  <div class="card-body">
+    <a href="./index.html" class="dropdown-item text-light bg-dark"><i class="fa fa-home"></i> Home /
+      {{story?.name}} / {{chapter?.name}}</a>
+  </div >
+  <div *ngFor="let i of listChapterImage" class="card mb-3">
+    <img src="{{i.image}}" alt="...">
+  </div>
+  <div class="col-12" style="text-align: center;margin-top: 2%;margin-bottom: 2%">
+    <button type="button" class="btn btn-primary" style="margin-right: 10%;width: 130px" (click)="backChapter()">
+      BACK
+    </button>
+    <button type="button" class="btn btn-primary" style="width: 130px" (click)="nextChapter()">NEXT</button>
+  </div>
+</div>
+<!--render_chapter-->
+

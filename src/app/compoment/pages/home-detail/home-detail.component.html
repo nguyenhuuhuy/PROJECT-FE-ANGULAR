@@ -1,0 +1,132 @@
+<div id="main-content" class="blog-page">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-lg-8 col-md-12 left-box" style="width:100%;">
+
+
+        <div class="container bootdey"
+             style="background-color: #212529;margin-top: 8%;margin-bottom: 2%;border: 0;border-radius: 0.55rem;">
+          <div class="col-md-12">
+            <section class="panel">
+              <div class="panel-body">
+                <div class="col-md-6">
+                  <div class="pro-img-details">
+                    <img
+                      src="{{story?.image}}"
+                      alt="">
+                  </div>
+                </div>
+                <div class="col-md-6" style="margin-top: 1%;color: white">
+                  <h2>
+                    {{story?.name}}
+                  </h2>
+                  <p>
+                    {{story?.content}}
+                  </p>
+                  <div class="product_meta">
+                    <p>Tác Giả: {{story?.author?.name}}</p>
+                    <p>Tên Khác: {{story?.author?.authorAlias}}</p>
+                    <div style="display: flex">
+                      <mat-icon (click)="likeStory()" style="color: red">favorite</mat-icon>
+                      <p style="margin-left: 1%" >Lượt yêu thích: {{listLikes.length}}</p>
+                    <mat-error style="margin-left: 2%">{{status}}</mat-error>
+                    </div>
+                    <p>view: {{story?.totalView}}</p>
+                    <strong>Thể Loại:</strong>
+                    <span class="posted_in" *ngFor="let ct of story?.categoryList">  <a routerLink="/detailCategory/{{ct.id}}">{{ct.name}}</a></span>
+                    <p>Tình Trạng:  {{story?.status == false ? 'Chưa Hoàn Thành':'Đã Hoàn Thành'}}</p>
+                    <h6>Giới thiệu: </h6>
+                    <p>{{story?.content}}</p>
+                  </div>
+                  <div style="display: flex;flex-wrap: wrap">
+                    <div>
+                      <button class="btn btn-round btn-success" type="button" (click)="stastChapter()"> ĐỌC TỪ ĐẦU</button>
+                    </div>
+                    <div style="padding-left: 2%">
+                      <button class="btn btn-round btn-danger" type="button" (click)="newChapter()"> ĐỌC MỚI NHẤT</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+
+        <div class="container bootstrap snippets bootdey"
+             style="border: 0;border-radius: 0.55rem;background: #212529;margin-bottom: 4%">
+          <div class="table-responsive">
+            <table class="scrollable" style="width: 100%;margin-bottom: 1%">
+              <thead>
+              <tr style="color: white">
+                <th colspan="2">
+                  <i class="fa-solid fa-database"></i>
+                  Danh Sách Chương
+                </th>
+              </tr>
+              </thead>
+              <tbody *ngFor="let chapter of chapterList">
+              <tr>
+                <td style="border-bottom: 1px solid white;padding: 1%" >
+                  <a class="dropdown-item text-light bg-dark" routerLink="/homeChapterImage/{{chapter.id}}">{{chapter.name}}</a>
+                </td>
+                  <td style="text-align: end;color: white">{{chapter.date?.slice(0,10)}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" style="background-color: #212529">
+          <div class="header">
+            <h4 style="color: orange">
+              <i class="fa-solid fa-comments"></i>
+              Bình Luận ({{story?.commentList?.length}})
+            </h4>
+          </div>
+            <mat-dialog-content>
+              <mat-card>
+          <div class="body" style="background-color: #212529">
+
+            <ul class="comment-reply list-unstyled">
+              <li class="row clearfix" *ngIf="checkLogin" style="margin-left: 1%">
+                <div class="icon-box col-md-2 col-4" style="width: 90px">
+                  <img class="img-fluid img-thumbnail" src="{{avatar}}" alt="Awesome Image">
+                  <h4 style="text-align: center;color: snow">{{name}}</h4>
+                </div>
+                <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                  <form #f="ngForm" (ngSubmit)="f.form.valid && commentSubmit()">
+                    <div class="form-group">
+                      <mat-form-field style="width: 350px">
+                        <mat-label>Content</mat-label>
+                        <textarea matInput [(ngModel)]="form.content" name="content"></textarea>
+                      </mat-form-field>
+                    </div>
+                    <div style="display: flex;justify-content: end">
+                      <button type="submit" class="btn btn-block btn-primary">SUBMIT</button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+              <li class="row clearfix" *ngFor="let cm of story?.commentList" style="margin-left: 1%">
+                <div class="icon-box col-md-2 col-4" style="width: 90px">
+                  <img class="img-fluid img-thumbnail" src="{{cm.user?.avatar}}" alt="Awesome Image"></div>
+                <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                  <h5 class="m-b-0"></h5>
+                  <p style="color: snow">{{cm.comment}} </p>
+                  <ul class="list-inline">
+                    <li><a href="javascript:void(0);" style="text-decoration: none; color: snow">{{cm.date?.slice(0,10)}}</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+              </mat-card>
+            </mat-dialog-content>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
