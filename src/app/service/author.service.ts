@@ -9,8 +9,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class AuthorService {
-  private API_AUTHOR = environment.API_LOCAL + 'author';
-  // private API_AUTHOR = environment.API_SERVER + 'author';
+  // private API_AUTHOR = environment.API_LOCAL + 'author';
+  private API_AUTHOR = environment.API_SERVER + 'author';
 // git conffig
   constructor(private httpClient: HttpClient) {
   }
