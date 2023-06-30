@@ -8,8 +8,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class LikesService {
-  // private API_LIKE = environment.API_LOCAL + 'likes';
-  private API_LIKE = environment.API_SERVER + 'likes';
+  private API_LIKE = environment.API_LOCAL + 'likes';
+  // private API_LIKE = environment.API_SERVER + 'likes';
   constructor(private httpClient: HttpClient) {
   }
 

@@ -9,8 +9,8 @@ import {Chapter} from "../model/Chapter";
 })
 export class ChapterService {
 
-  // private API_CHAPTER = environment.API_LOCAL + 'chapter';
-  private API_CHAPTER = environment.API_SERVER + 'chapter';
+  private API_CHAPTER = environment.API_LOCAL + 'chapter';
+  // private API_CHAPTER = environment.API_SERVER + 'chapter';
 
   constructor(private httpClient: HttpClient) {
   }

@@ -9,8 +9,8 @@ import {Observable} from "rxjs";
 })
 export class CategoryService {
   //API_LOCAL
-  // private API_CATEGORY = environment.API_LOCAL + 'category';
-  private API_CATEGORY = environment.API_SERVER + 'category';
+  private API_CATEGORY = environment.API_LOCAL + 'category';
+  // private API_CATEGORY = environment.API_SERVER + 'category';
 
   //API_SERVER
 

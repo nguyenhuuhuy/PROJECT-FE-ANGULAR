@@ -12,14 +12,14 @@ import {ChangeAvatar} from "../model/ChangeAvatar";
 })
 export class AuthService {
   //API LOCAL
-  // private API_SIGNUP = environment.API_LOCAL + 'signup';
-  // private API_SIGNIN = environment.API_LOCAL + 'signin';
-  // private API_UPDATE_AVATAR = environment.API_LOCAL + 'change-avatar';
-  // private API_SEARCH = environment.API_LOCAL + 'search';
-  private API_SEARCH = environment.API_SERVER + 'search';
-  private API_SIGNUP = environment.API_SERVER+'signup';
-  private API_SIGNIN = environment.API_SERVER+'signin';
-  private API_UPDATE_AVATAR = environment.API_SERVER+'change-avatar';
+  private API_SIGNUP = environment.API_LOCAL + 'signup';
+  private API_SIGNIN = environment.API_LOCAL + 'signin';
+  private API_UPDATE_AVATAR = environment.API_LOCAL + 'change-avatar';
+  private API_SEARCH = environment.API_LOCAL + 'search';
+  // private API_SEARCH = environment.API_SERVER + 'search';
+  // private API_SIGNUP = environment.API_SERVER+'signup';
+  // private API_SIGNIN = environment.API_SERVER+'signin';
+  // private API_UPDATE_AVATAR = environment.API_SERVER+'change-avatar';
 
   //API SERVER
   // private API_SIGNUP = environment.API_SERVER+'signup';

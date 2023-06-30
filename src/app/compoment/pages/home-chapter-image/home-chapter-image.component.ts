@@ -16,6 +16,7 @@ export class HomeChapterImageComponent implements OnInit{
   story?:Story;
   listChapter:Chapter[] = [];
   listChapterImage:ChapterImage [] = [];
+  checkButton = false;
   constructor(private activeRoute:ActivatedRoute,
               private chapterService:ChapterService,
               private chapterImageService:ChapterImageService,
@@ -45,10 +46,19 @@ export class HomeChapterImageComponent implements OnInit{
 
   }
   nextChapter() {
+    // console.log(this.listChapter)
     for (let i = 0; i < this.listChapter.length; i++) {
       if (this.listChapter[i].id == this.chapter?.id){
+        if ((i+1)>=this.listChapter.length){
+          console.log("het chap roi")
+          break;
+        }
         this.chapter = this.listChapter[i+1];
         this.router.navigate(['/homeChapterImage/'+this.listChapter[i+1].id]);
+        // @ts-ignore
+        this.chapterImageService.getListChapterImageByChapter(this.listChapter[i+1].id).subscribe(data=>{
+          this.listChapterImage = data;
+        })
         break;
       }
     }
@@ -57,8 +67,16 @@ export class HomeChapterImageComponent implements OnInit{
   backChapter() {
     for (let i = 0; i < this.listChapter.length; i++) {
       if (this.listChapter[i].id == this.chapter?.id){
+        if (i-1<0){
+          console.log("het chap de back")
+          break;
+        }
         this.chapter = this.listChapter[i-1];
         this.router.navigate(['/homeChapterImage/'+this.listChapter[i-1].id])
+        // @ts-ignore
+        this.chapterImageService.getListChapterImageByChapter(this.listChapter[i-1].id).subscribe(data=>{
+          this.listChapterImage = data;
+        })
         break;
       }
     }
