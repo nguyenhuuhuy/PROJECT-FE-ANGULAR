@@ -9,8 +9,8 @@ import {Category} from "../model/Category";
   providedIn: 'root'
 })
 export class StoryService {
-  // private API_STORY = environment.API_LOCAL + 'story';
-  private API_STORY = environment.API_SERVER + 'story';
+  private API_STORY = environment.API_LOCAL + 'story';
+  // private API_STORY = environment.API_SERVER + 'story';
 
   constructor(private httpClient: HttpClient) {
   }

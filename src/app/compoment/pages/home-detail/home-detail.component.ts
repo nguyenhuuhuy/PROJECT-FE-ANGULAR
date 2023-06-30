@@ -28,6 +28,7 @@ export class HomeDetailComponent implements OnInit {
   checkLogin = false;
   chapter?:Chapter;
   listLikes: Likes [] = [];
+  commentList: Comments [] = [];
   constructor(private activeRoute: ActivatedRoute,
               private storyService: StoryService,
               private tokenService: TokenService,
@@ -56,6 +57,10 @@ export class HomeDetailComponent implements OnInit {
     this.likesService.getListLikeByStory(id).subscribe(data=>{
         this.listLikes = data;
     })
+    this.commentService.getCommentByStoryId(id).subscribe(data=>{
+      this.commentList = data;
+      console.log(this.commentList);
+    })
   }
 
   protected readonly Story = Story;
@@ -71,6 +76,7 @@ export class HomeDetailComponent implements OnInit {
         this.ngOnInit()
       }
     })
+
   }
 
   likeStory() {

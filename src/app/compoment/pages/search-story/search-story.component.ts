@@ -16,6 +16,7 @@ export class SearchStoryComponent implements OnInit{
       this.valueSearch = data;
       this.storyService.searchStoryByName(this.valueSearch).subscribe(data=>{
         this.storyList = data
+        console.log(this.storyList)
       })
     });
 
