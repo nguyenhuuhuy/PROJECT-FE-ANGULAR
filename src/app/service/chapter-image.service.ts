@@ -8,8 +8,8 @@ import {ChapterImage} from "../model/ChapterImage";
   providedIn: 'root'
 })
 export class ChapterImageService {
-  private API_CHAPTER_IMAGE = environment.API_LOCAL + 'chapterImage';
-  // private API_CHAPTER_IMAGE = environment.API_SERVER + 'chapterImage';
+  // private API_CHAPTER_IMAGE = environment.API_LOCAL + 'chapterImage';
+  private API_CHAPTER_IMAGE = environment.API_SERVER + 'chapterImage';
 
   constructor(private httpClient: HttpClient) {
   }

@@ -8,8 +8,8 @@ import {Comments} from "../model/Comments";
   providedIn: 'root'
 })
 export class CommentsService {
-  private API_COMMENT = environment.API_LOCAL + 'comment';
-  // private API_COMMENT = environment.API_SERVER + 'comment';
+  // private API_COMMENT = environment.API_LOCAL + 'comment';
+  private API_COMMENT = environment.API_SERVER + 'comment';
 
   constructor(private httpClient: HttpClient) { }
   createComment(comments:Comments):Observable<any>{
