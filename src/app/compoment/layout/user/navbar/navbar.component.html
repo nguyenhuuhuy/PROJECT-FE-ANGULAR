@@ -164,7 +164,20 @@
 <aside id="sidebar" class="sidebar customMenu">
 
   <ul class="sidebar-nav" id="sidebar-nav">
-
+    <li class="nav-item">
+      <a class="nav-link" routerLink="">HOME</a>
+    </li>
+    <li class="nav-item dropdown" *ngIf="!checkRole">
+      <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown"
+         aria-expanded="false">
+        THỂ LOẠI
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li *ngFor="let ct of listCate">
+          <a class="dropdown-item" href="/detailCategory/{{ct.id}}">{{ct.name}}</a>
+        </li>
+      </ul>
+    </li>
     <li class="nav-item">
       <a class="nav-link " routerLink="category" *ngIf="checkRole">
         <i class="bi bi-grid"></i>
