@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit{
   getPageRequest(request:any){
     this.storyService.getPageStory(request).subscribe(data=>{
       this.storyList = data['content']
-      console.log(this.storyList)
     })
   }
 

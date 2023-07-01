@@ -24,6 +24,7 @@ export class HomeDetailCategoryComponent implements OnInit{
     let id = +storyId;
     this.storyService.getListStoryByCategory(id).subscribe(data=>{
       this.listStoryByCate = data;
+      console.log(data)
     })
     this.categoryService.getCategoryById(id).subscribe(data=>{
       this.category = data;

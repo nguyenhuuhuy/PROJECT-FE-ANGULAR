@@ -99,7 +99,6 @@ export class HomeDetailComponent implements OnInit {
 
   newChapter() {
     this.router.navigate(['/homeChapterImage/'+this.chapterList[this.chapterList.length-1].id]);
-
   }
 
   stastChapter() {

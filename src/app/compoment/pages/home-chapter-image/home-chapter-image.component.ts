@@ -50,7 +50,7 @@ export class HomeChapterImageComponent implements OnInit{
     for (let i = 0; i < this.listChapter.length; i++) {
       if (this.listChapter[i].id == this.chapter?.id){
         if ((i+1)>=this.listChapter.length){
-          console.log("het chap roi")
+          alert("Chương cuối rồi bạn ơi !!!")
           break;
         }
         this.chapter = this.listChapter[i+1];
@@ -68,7 +68,7 @@ export class HomeChapterImageComponent implements OnInit{
     for (let i = 0; i < this.listChapter.length; i++) {
       if (this.listChapter[i].id == this.chapter?.id){
         if (i-1<0){
-          console.log("het chap de back")
+          alert("chương đầu đây rồi bạn ko back được đâu !!!")
           break;
         }
         this.chapter = this.listChapter[i-1];

@@ -55,6 +55,11 @@ export class NavbarComponent implements OnInit {
 
 
   sreachByStory() {
+    if (this.searchName == ''){
+      // console.log("can viet gi do")
+    } else {
     this.storyService.setValue(this.searchName);
+    }
+    // console.log(this.searchName)
   }
 }

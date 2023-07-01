@@ -1,4 +1,4 @@
-<div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 " style="margin-bottom: 5%;margin-top: 10%">
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 " style="margin-bottom: 5%;margin-top: 10%" *ngIf="!status">
   <div class="col" *ngFor="let top of storyList">
     <div class="card" style="border-bottom-left-radius: 0;border-bottom-right-radius: 0">
       <a routerLink="/detailStory/{{top.id}}">

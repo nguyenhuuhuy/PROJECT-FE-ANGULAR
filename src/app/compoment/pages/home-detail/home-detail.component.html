@@ -38,7 +38,7 @@
                     <h6>Giới thiệu: </h6>
                     <p>{{story?.content}}</p>
                   </div>
-                  <div style="display: flex;flex-wrap: wrap">
+                  <div style="display: flex">
                     <div>
                       <button class="btn btn-round btn-success" type="button" (click)="stastChapter()"> ĐỌC TỪ ĐẦU</button>
                     </div>
@@ -109,11 +109,11 @@
                   </form>
                 </div>
               </li>
-              <li class="row clearfix" *ngFor="let cm of commentList" style="margin-left: 1%">
+              <li class="row clearfix" *ngFor="let cm of commentList" style="margin-left: 1%; padding-bottom: 4%">
                 <div class="icon-box col-md-2 col-4" style="width: 90px">
                   <img class="img-fluid img-thumbnail" src="{{cm.user?.avatar}}" alt="Awesome Image"></div>
                 <div class="text-box col-md-10 col-8 p-l-0 p-r0">
-                  <h5 class="m-b-0"></h5>
+                  <h5 class="m-b-0" style="color: snow">{{cm.user?.name}}</h5>
                   <p style="color: snow">{{cm.comment}} </p>
                   <ul class="list-inline">
                     <li><a href="javascript:void(0);" style="text-decoration: none; color: snow">{{cm.date?.slice(0,10)}}</a></li>
